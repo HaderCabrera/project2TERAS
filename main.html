@@ -122,6 +122,31 @@
         <span>CONSULTAR FACTURA</span>
     </button>
     </section>
+
+
+    <form id="task-form">
+
+        <label for="">Codigo</label>
+        <input type="text" placeholder="Codigo-factura" id="codigo-factura">
+
+
+        <label>Proveedor</label>
+        <input type="text" placeholder="Proveedor" id="proveedor">
+
+        <label>Servicio</label>
+        <select name="servicio" id="servicio">
+            <option value="Agua">Agua</option>
+            <option value="Luz">Luz</option>
+            <option value="Gas">Gas</option>
+        </select>
+
+        <button id="btn-enviar">Enviar</button>
+
+    </form>
+    
+
+    <script type="module" src="js/index.js"></script>
+
     <!--MODAL1-->
     <div id="modal-js-example" class="modal">
     <div class="modal-background"></div>
@@ -245,5 +270,6 @@
         </div>
     </footer>
     <script src="./hader.js"></script>
+
 </body>
 </html>

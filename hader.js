@@ -39,4 +39,28 @@ document.addEventListener('DOMContentLoaded', () => {
         closeAllModals();
       }
     });
+
+
+    // modificar color input y validacion:
+
+    let miInput = document.getElementById('inputFactura');
+    let icono = document.getElementById('iconoFactura');
+    let mensaje = document.getElementById('parraFactura');
+
+    miInput.addEventListener('input', function () {
+        let longitudTexto = miInput.value.length;
+
+        // Modificar clases según la longitud del texto
+        if (longitudTexto > 4) {
+            miInput.classList.remove('is-danger');
+            miInput.classList.add('is-success');
+
+            icono.className = 'fas fa-check';
+
+            mensaje.classList.remove('is-danger');
+            mensaje.classList.add('is-success');
+            mensaje.textContent = 'Referencia válida.';
+        }
+    });
+    
   });

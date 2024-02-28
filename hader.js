@@ -1,3 +1,9 @@
+//PARA LA CONSULTA
+let facturaCard = document.querySelector('.facturaCard')
+const habilitar = () => facturaCard.classList.remove('probando')
+const deshabilitar = () => facturaCard.classList.add('probando')
+document.querySelector('.prueba').addEventListener("click", deshabilitar)
+
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
     function openModal($el) {
@@ -37,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (event) => {
       if(event.key === "Escape") {
         closeAllModals();
+        deshabilitar(); //para eliminar factura despues de haberla mostrado
       }
     });
   });
+

@@ -117,7 +117,7 @@
         Con solo el numero de referencia de tu factura podras pagar con un click
         todas tus facturas.
     </h2>
-    <button class="js-modal-trigger button is-large is-link " data-target="modal-js-example">
+    <button class="js-modal-trigger button is-large is-link prueba" data-target="modal-js-example">
         <span class="icon is-medium">
         <i class="fa fa-globe"></i>
         </span>
@@ -185,16 +185,73 @@
         <!---->
         <div class="field is-grouped">
             <div class="control">
-
-            <button class="button js-modal-trigger is-success" data-target="modal-js-example2" id="botonConsultar">Consultar</button>
-
+            <button class="button  is-success"  id="botonConsultar">Consultar</button>
             </div>
         </div>
         </div>
-    </div>
+           <!--PROBANDO CARTA DENTRO DE UN MISMO MODAL-->
+           <div class="box facturaCard probando">
+            <button class="button is-danger modal-close ajustarUbicacion2" style="padding: 15px;" aria-label="close"></button>
+            <p class="title is-3">Datos de la factura</p>
+            <hr>
+            <div class="tile is-ancestor">
+                <div class="tile is-vertical is-8">
+                <div class="tile">
+                    <div class="tile is-parent is-vertical">
+                    <article class="tile is-child box">
+                       
 
+                        <div class="numeroFactura">Numero de la factura:
+                            <span id="numeroFactura"></span>
+                        </div>
+
+                    </article>
+                    <article class="tile is-child box">
+             
+
+                        <div>Periodo facturado:
+                            <span id="periodoFacturado"></span>
+                        </div>
+
+                    </article>
+                    </div>
+                    <div class="tile is-parent">
+                    <article class="tile is-child box" id="logoEmpresa">
+              
+
+                            <img class="logoEmpresa" src="" alt="Logo de la empresa">
+
+                    </article>
+                    </div>
+                </div>
+                <div class="tile is-parent">
+                    <article class="tile is-child box">
+              
+
+                    <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i>Total a pagar: <span id="totalPagar"></span></div>
+
+                    </article>
+                </div>
+                </div>
+                <div class="tile is-parent">
+                <article class="tile is-child box">
+               
+                    <div id="direccionDomicilio"><strong>Direccion del domocilio</strong></div>
+                </article>
+                </div>
+            </div>
+            <section class="section intoo">
+                <div class="container ">
+
+                    <button class="button is-danger" id="botonPagar" >PAGAR</button>
+
+                </div>
+            </section>
+            </div>   
+        </div>
+    
     </div>
-    <!--MODAL2-->
+    <!--MODAL2
     <div id="modal-js-example2" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
@@ -207,7 +264,7 @@
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                       
 
                         <div class="numeroFactura">Numero de la factura:
                             <span id="numeroFactura"></span>
@@ -215,7 +272,7 @@
 
                     </article>
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+             
 
                         <div>Periodo facturado:
                             <span id="periodoFacturado"></span>
@@ -225,7 +282,7 @@
                     </div>
                     <div class="tile is-parent">
                     <article class="tile is-child box" id="logoEmpresa">
-                        <!-- Put any content you want -->
+              
 
                             
 
@@ -234,7 +291,7 @@
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child box">
-                    <!-- Put any content you want -->
+              
 
                     <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i>Total a pagar: <span id="totalPagar"></span></div>
 
@@ -243,12 +300,14 @@
                 </div>
                 <div class="tile is-parent">
                 <article class="tile is-child box">
+
                     <!-- Put any content you want -->
                     <div>
                         Direccion del domicilio: 
                         <br>
                         <span id="direccionDomicilio"></span>  
                     </div>
+  
                 </article>
                 </div>
             </div>
@@ -262,7 +321,8 @@
             </div>   
         </div>
         </div>
-    </div>
+    </div>-->
+
     <!--FOOTER-->
     <footer class="footer">
         <div class="content has-text-centered">

@@ -47,33 +47,44 @@ document.addEventListener('DOMContentLoaded', () => {
    let miInput = document.getElementById('codigoFactura');
    let icono = document.getElementById('iconoFactura');
    let mensaje = document.getElementById('parraFactura');
-  let boton = document.getElementById('botonConsultar')
+   let boton = document.getElementById('botonConsultar');
+   
    miInput.addEventListener('input', function () {
-     let longitudTexto = miInput.value.length;
- 
-     // Modificar clases según la longitud del texto
-     if (longitudTexto > 1) {
-       miInput.classList.remove('is-danger');
-       miInput.classList.add('is-success');
-      
-       icono.className = 'fas fa-check';
- 
-       mensaje.classList.remove('is-danger');
-       mensaje.classList.add('is-success');
-       mensaje.textContent = 'Referencia válida.';
-
-       boton.removeAttribute('disabled')
-     }else {
-      miInput.classList.remove('is-success');
-      miInput.classList.add('is-danger');
-
-      icono.className = 'fa fa-file';
-
-      mensaje.classList.remove('is-success');
-      mensaje.classList.add('is-danger');
-      mensaje.textContent = 'Numero de referencia invalido.';
-      boton.setAttribute('disabled', 'true');
-  }
+       let valorInput = miInput.value.trim(); // Eliminar espacios al inicio y al final
+       let longitudTexto = valorInput.length;
+   
+       // Expresión regular para verificar si hay espacios en blanco
+       let tieneEspacios = /\s/.test(valorInput);
+   
+       // Modificar clases según la longitud del texto y la validación de espacios
+       if (longitudTexto > 1 && !tieneEspacios) {
+           miInput.classList.remove('is-danger');
+           miInput.classList.add('is-success');
+   
+           icono.className = 'fas fa-check';
+   
+           mensaje.classList.remove('is-danger');
+           mensaje.classList.add('is-success');
+           mensaje.textContent = 'Referencia válida.';
+   
+           boton.removeAttribute('disabled');
+       } else {
+           miInput.classList.remove('is-success');
+           miInput.classList.add('is-danger');
+   
+           icono.className = 'fas fa-exclamation-triangle';
+   
+           mensaje.classList.remove('is-success');
+           mensaje.classList.add('is-danger');
+   
+           if (tieneEspacios) {
+               mensaje.textContent = 'La referencia no debe contener espacios.';
+           } else {
+               mensaje.textContent = 'Número de referencia inválido.';
+           }
+   
+           boton.setAttribute('disabled', 'true');
+       }
    });
 
 });

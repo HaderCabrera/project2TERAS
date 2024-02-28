@@ -213,7 +213,8 @@ botonConsultar.addEventListener("click" , async (e) =>{
         let contenedorDirrec = document.getElementById("direccionDomicilio")
         let contenedorLogo = document.getElementById("logoEmpresa")
         let contenedorPagar = document.getElementById("totalPagar")
-
+        let contenedorEstado = document.getElementById("estadoFactura")
+        let botonPagar = document.getElementById("botonPagar")
     if (doc.id == codigoFactura && datosFac["Empresa"] == proveedor) {
 
             cod = doc.id
@@ -221,7 +222,12 @@ botonConsultar.addEventListener("click" , async (e) =>{
             direccion = datosFac["direccion"]
             logo = datosFac["mesFact"]
             valor = datosFac["totalPago"]
-
+            estado = datosFac["Pagada"] ? "pagado" : "pendiente";
+            if (estado == "pendiente"){
+                botonPagar.removeAttribute('disabled')
+            }else{
+                botonPagar.setAttribute('disabled',"true")
+            }
             etiquetaImg = `
             <figure class="image is-128x128">
                 <img class="logoEmpresa" src="${link}" alt="Logo de la empresa">
@@ -240,7 +246,7 @@ botonConsultar.addEventListener("click" , async (e) =>{
             contenedorDirrec.textContent = direccion 
             contenedorPagar.textContent = valor
             contenedorLogo.innerHTML = etiquetaImg 
-
+            contenedorEstado.textContent = estado
 
             
             existe = true

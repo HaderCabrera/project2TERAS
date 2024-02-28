@@ -251,7 +251,7 @@ botonConsultar.addEventListener("click" , async (e) =>{
             direccion = datosFac["direccion"]
             logo = datosFac["mesFact"]
             valor = datosFac["totalPago"]
-            estado = datosFac["Pagada"] ? "pagado" : "pendiente";
+            let estado = datosFac["Pagada"] ? "pagado" : "pendiente";
             if (estado == "pendiente"){
                 botonPagar.removeAttribute('disabled')
             }else{

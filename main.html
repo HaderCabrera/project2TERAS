@@ -126,6 +126,7 @@
     <script type="module" src="js/index.js"></script>
 
     <!--MODAL1-->
+
     <div id="modal-js-example" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content">
@@ -133,26 +134,27 @@
         <p class="title is-3">Consulta tu factura</p>
         <!---->
         <div class="field">
+
             <label class="label">Tipo de servicio:</label>
             <div class="control">
             <div class="select">
-                <select>
-                <option>Agua</option>
-                <option>Luz</option>
-                <option>Gas</option>
+                <select id="tipoServicio">
+                <option selected="true" disabled="disabled">Tipo Servicio</option>
+                <option value="Agua">Agua</option>
+                <option value="Luz">Luz</option>
+                <option value="Gas">Gas</option>
                 </select>
             </div>
             </div>
+
         </div>
         <!---->
         <div class="field">
             <label class="label">Empresa:</label>
             <div class="control">
             <div class="select">
-                <select>
-                <option>ESSA</option>
-                <option>ESSA2</option>
-                <option>ESSA3</option>
+                <select id="seccionProveedores" >
+                    
                 </select>
             </div>
             </div>
@@ -162,6 +164,7 @@
             <label class="label">Numero de factura:</label>
             <div class="control has-icons-left has-icons-right">
             <input
+                id="codigoFactura"
                 class="input is-success"
                 type="text"
                 placeholder="Text input"
@@ -179,7 +182,7 @@
         <!---->
         <div class="field is-grouped">
             <div class="control">
-            <button class="button js-modal-trigger is-success" data-target="modal-js-example2">Consultar</button>
+            <button class="button js-modal-trigger is-success" data-target="modal-js-example2" id="botonConsultar">Consultar</button>
             <button class="button is-success modal-close" style="padding: 30px;" aria-label="close"></button>
             </div>
         </div>
@@ -200,24 +203,36 @@
                     <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
                         <!-- Put any content you want -->
-                        <div class="numeroFactura">Numero de la factura:</div>
+
+                        <div class="numeroFactura">Numero de la factura:
+                            <span id="numeroFactura"></span>
+                        </div>
+
                     </article>
                     <article class="tile is-child box">
                         <!-- Put any content you want -->
-                        <div id="periodoFacturado">Periodo facturado:</div>
+
+                        <div>Periodo facturado:
+                            <span id="periodoFacturado"></span>
+                        </div>
+
                     </article>
                     </div>
                     <div class="tile is-parent">
-                    <article class="tile is-child box">
+                    <article class="tile is-child box" id="logoEmpresa">
                         <!-- Put any content you want -->
+
                             <img class="logoEmpresa" src="" alt="Logo de la empresa">
+
                     </article>
                     </div>
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child box">
                     <!-- Put any content you want -->
-                    <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i>Total a pagar:</div>
+
+                    <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i>Total a pagar: <span id="totalPagar"></span></div>
+
                     </article>
                 </div>
                 </div>
@@ -230,7 +245,7 @@
             </div>
             <section class="section intoo">
                 <div class="container ">
-                    <button class="button is-danger">PAGAR</button>
+                    <button class="button is-danger" id="botonPagar" >PAGAR</button>
                     <button class="button is-danger modal-close" style="padding: 30px;" aria-label="close"></button>
                 </div>
             </section>

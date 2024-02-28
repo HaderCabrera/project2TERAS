@@ -4,6 +4,19 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 })
 
+
+
+
+function showCustomAlert() {
+    document.getElementById('customAlert').style.display = 'flex';
+}
+  
+function hideCustomAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+    location.reload()
+}
+
+
 /* let arregloLuz = ["Codensa", "Enel"]
 let arregloAgua = ["Metropolitana", "Codensa"]
 let arregloGas = ["Terpel", "Enel"] */
@@ -37,13 +50,19 @@ const botonPagar = document.getElementById("botonPagar")
 const botonConsultar = document.getElementById("botonConsultar")
 const cerrarConsulta = document.getElementById("cerrarConsulta")
 const cerrarDatosFactura = document.getElementById("cerrarDatosFactura")
+const botonOk = document.getElementById("botonOk")
+
+
+botonOk.addEventListener("click" , async () => {
+    hideCustomAlert()
+})
 
 
 
 cerrarConsulta.addEventListener ("click" , async () => {
 
-    let contenedorCodigo = document.getElementById("codigoFactura")
-    contenedorCodigo.value = "Ingrese codigo de la factura"
+    let contCodConsulta = document.getElementById("codigoFactura")
+    contCodConsulta.value = ""
 
 
 })
@@ -63,6 +82,16 @@ cerrarDatosFactura.addEventListener("click" , async () => {
     contenedorDirrec.textContent = ""
     contenedorPagar.textContent = ""
     contenedorLogo.innerHTML = ""
+
+
+    deshabilitar()
+
+    
+
+    
+
+
+
     
 })
 
@@ -252,6 +281,7 @@ botonConsultar.addEventListener("click" , async (e) =>{
 
     if (existe === false) {
         deshabilitar()
+        alert("La factura no existe o los datos son incorrectos")
     }
 
     e.preventDefault()
@@ -294,8 +324,12 @@ botonPagar.addEventListener("click", async (e) => {
                             //Aqui solo es necesario colocar lo datos a modificar no todo el objeto de nuevo
                             Pagada: true,
                         }, tipoServicio);
-                        location.reload()
+                        showCustomAlert()
+                        
                         console.log("Factura pagada");
+                        
+                        
+                        
 
                     } catch (error) {
                         console.error("Error al actualizar la factura:", error);

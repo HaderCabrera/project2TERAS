@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
      let longitudTexto = miInput.value.length;
  
      // Modificar clases según la longitud del texto
-     if (longitudTexto > 1) {
+     if (longitudTexto >= 1) {
        miInput.classList.remove('is-danger');
        miInput.classList.add('is-success');
       

@@ -122,6 +122,10 @@ botonConsultar.addEventListener("click" , async (e) =>{
 
 botonPagar.addEventListener("click", async (e) => {
 
+    let tipoServicio = document.getElementById("tipoServicio").value
+    let proveedor = document.getElementById("seccionProveedores").value
+    let codigoFactura = document.getElementById("codigoFactura").value 
+
     let existe = false
 
     

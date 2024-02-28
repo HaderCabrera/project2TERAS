@@ -1,42 +1,73 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Functions to open and close a modal
-    function openModal($el) {
-      $el.classList.add('is-active');
-    }
-  
-    function closeModal($el) {
-      $el.classList.remove('is-active');
-    }
-  
-    function closeAllModals() {
-      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-        closeModal($modal);
-      });
-    }
-  
-    // Add a click event on buttons to open a specific modal
-    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-      const modal = $trigger.dataset.target;
-      const $target = document.getElementById(modal);
-  
-      $trigger.addEventListener('click', () => {
-        openModal($target);
-      });
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
     });
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
-    });
-  
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      if(event.key === "Escape") {
-        closeAllModals();
-      }
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
     });
   });
+
+  // Add a click event on various child elements to close the parent modal
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  // Add a keyboard event to close all modals
+  document.addEventListener('keydown', (event) => {
+    if(event.key === "Escape") {
+      closeAllModals();
+    }
+  });
+
+   // Your script code here
+   let miInput = document.getElementById('codigoFactura');
+   let icono = document.getElementById('iconoFactura');
+   let mensaje = document.getElementById('parraFactura');
+ 
+   miInput.addEventListener('input', function () {
+     let longitudTexto = miInput.value.length;
+ 
+     // Modificar clases según la longitud del texto
+     if (longitudTexto > 4) {
+       miInput.classList.remove('is-danger');
+       miInput.classList.add('is-success');
+ 
+       icono.className = 'fas fa-check';
+ 
+       mensaje.classList.remove('is-danger');
+       mensaje.classList.add('is-success');
+       mensaje.textContent = 'Referencia válida.';
+     }else {
+      miInput.classList.remove('is-success');
+      miInput.classList.add('is-danger');
+
+      icono.className = 'fa fa-file';
+
+      mensaje.classList.remove('is-success');
+      mensaje.classList.add('is-danger');
+      mensaje.textContent = 'Numero de referencia invalido.';
+  }
+   });
+
+});

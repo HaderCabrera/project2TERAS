@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
   // Functions to open and close a modal
   function openModal($el) {
@@ -22,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     $trigger.addEventListener('click', () => {
       openModal($target);
     });
+
   });
 
   // Add a click event on various child elements to close the parent modal
@@ -44,20 +47,22 @@ document.addEventListener('DOMContentLoaded', () => {
    let miInput = document.getElementById('codigoFactura');
    let icono = document.getElementById('iconoFactura');
    let mensaje = document.getElementById('parraFactura');
- 
+  let boton = document.getElementById('botonConsultar')
    miInput.addEventListener('input', function () {
      let longitudTexto = miInput.value.length;
  
      // Modificar clases según la longitud del texto
-     if (longitudTexto > 4) {
+     if (longitudTexto > 1) {
        miInput.classList.remove('is-danger');
        miInput.classList.add('is-success');
- 
+      
        icono.className = 'fas fa-check';
  
        mensaje.classList.remove('is-danger');
        mensaje.classList.add('is-success');
        mensaje.textContent = 'Referencia válida.';
+
+       boton.removeAttribute('disabled')
      }else {
       miInput.classList.remove('is-success');
       miInput.classList.add('is-danger');
@@ -67,7 +72,20 @@ document.addEventListener('DOMContentLoaded', () => {
       mensaje.classList.remove('is-success');
       mensaje.classList.add('is-danger');
       mensaje.textContent = 'Numero de referencia invalido.';
+      boton.setAttribute('disabled', 'true');
   }
    });
 
 });
+
+  
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+      if(event.key === "Escape") {
+        closeAllModals();
+        deshabilitar(); //para eliminar factura despues de haberla mostrado
+      }
+    });
+
+
+

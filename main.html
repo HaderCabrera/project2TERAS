@@ -117,7 +117,7 @@
         Con solo el numero de referencia de tu factura podras pagar con un click
         todas tus facturas.
     </h2>
-    <button class="js-modal-trigger button is-large is-link " data-target="modal-js-example">
+    <button class="js-modal-trigger button is-large is-link prueba" data-target="modal-js-example">
         <span class="icon is-medium">
         <i class="fa fa-globe"></i>
         </span>
@@ -133,7 +133,7 @@
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-        <button class="button is-success modal-close ajustarUbicacion1" style="padding: 15px;" aria-label="close"></button>
+        <button class="button is-success modal-close ajustarUbicacion1" style="padding: 15px;" aria-label="close" id="cerrarConsulta"></button>
         <p class="title is-3">Consulta tu factura</p>
         <!---->
         <div class="field">
@@ -170,8 +170,10 @@
                 id="codigoFactura"
                 class="input is-danger"
                 type="text"
+
                 placeholder="Ingrese el codigo de la factura"
                 value=""
+
             />
             <span class="icon is-small is-left">
                 <i class="fa fa-file" aria-hidden="true"></i>
@@ -188,18 +190,13 @@
 
             <button class="button js-modal-trigger is-success" data-target="modal-js-example2" id="botonConsultar" disabled>Consultar</button>
 
+
             </div>
         </div>
         </div>
-    </div>
-
-    </div>
-    <!--MODAL2-->
-    <div id="modal-js-example2" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-content">
-        <div class="box ">
-            <button class="button is-danger modal-close ajustarUbicacion2" style="padding: 15px;" aria-label="close"></button>
+           <!--PROBANDO CARTA DENTRO DE UN MISMO MODAL-->
+           <div class="box facturaCard probando">
+            <button class="button is-danger modal-close ajustarUbicacion2" id="cerrarDatosFactura" style="padding: 15px;" aria-label="close"></button>
             <p class="title is-3">Datos de la factura</p>
             <hr>
             <div class="tile is-ancestor">
@@ -207,7 +204,7 @@
                 <div class="tile">
                     <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+                       
 
                         <div class="numeroFactura">Numero de la factura:
                             <span id="numeroFactura"></span>
@@ -215,7 +212,7 @@
 
                     </article>
                     <article class="tile is-child box">
-                        <!-- Put any content you want -->
+             
 
                         <div>Periodo facturado:
                             <span id="periodoFacturado"></span>
@@ -225,7 +222,7 @@
                     </div>
                     <div class="tile is-parent">
                     <article class="tile is-child box" id="logoEmpresa">
-                        <!-- Put any content you want -->
+              
 
                             <img class="logoEmpresa" src="" alt="Logo de la empresa">
 
@@ -234,7 +231,7 @@
                 </div>
                 <div class="tile is-parent">
                     <article class="tile is-child box">
-                    <!-- Put any content you want -->
+              
 
                     <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i>Total a pagar: <span id="totalPagar"></span></div>
 
@@ -243,7 +240,7 @@
                 </div>
                 <div class="tile is-parent">
                 <article class="tile is-child box">
-                    <!-- Put any content you want -->
+               
                     <div id="direccionDomicilio"><strong>Direccion del domocilio</strong></div>
                 </article>
                 </div>
@@ -257,8 +254,9 @@
             </section>
             </div>   
         </div>
-        </div>
+    
     </div>
+
     <!--FOOTER-->
     <footer class="footer">
         <div class="content has-text-centered">

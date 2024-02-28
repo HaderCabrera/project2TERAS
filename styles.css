@@ -39,3 +39,7 @@
 .blanco{
     color: white;
 }
+/*PARA HABILITAR-DESHABILITA FACTURA*/
+.probando{
+    display: none;
+}

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
     <link rel="stylesheet" href="styles.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
+    <link rel="stylesheet" href="css/alert.css">
 </head>
 <body>
     <!--ENCABEZADO-->
@@ -188,7 +189,7 @@
         <div class="field is-grouped">
             <div class="control">
 
-            <button class="button js-modal-trigger is-success" data-target="modal-js-example2" id="botonConsultar" disabled>Consultar</button>
+            <button class="button is-success" id="botonConsultar" disabled>Consultar</button>
 
 
             </div>
@@ -196,7 +197,7 @@
         </div>
            <!--PROBANDO CARTA DENTRO DE UN MISMO MODAL-->
            <div class="box facturaCard probando">
-            <button class="button is-danger modal-close ajustarUbicacion2" id="cerrarDatosFactura" style="padding: 15px;" aria-label="close"></button>
+            <button class="button is-danger ajustarUbicacion2" id="cerrarDatosFactura" style="padding: 10px; border-radius: 25px; height: 30px;" aria-label="close">X</button>
             <p class="title is-3">Datos de la factura</p>
             <hr>
             <div class="tile is-ancestor">
@@ -238,13 +239,15 @@
                     </article>
                 </div>
                 </div>
+
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
-                        <div id="direccionDomicilio"><strong>Direccion del domocilio</strong></div>
+                        <div id="direccionDomicilio"><strong>Direccion del domocilio <span id="direccionDomicilio"></span></strong></div>
                     </article>
                     <article class="tile is-child box">
                         <div id="estado"><strong>Estado Factura: <span id="estadoFactura"></span></strong></div>
                     </article>
+
                 </div>
                 
             </div>
@@ -269,6 +272,14 @@
         </p>
         </div>
     </footer>
+
+    
+    <div class="custom-alert" id="customAlert">
+        <h2>¡Factura pagada exitosamente</h2>
+        <button class="close-btn" id="botonOk" onclick="hideCustomAlert()">ok</button>
+    </div>
+    
     <script src="./hader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </body>
 </html>

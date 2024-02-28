@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
    let boton = document.getElementById('botonConsultar');
    
    miInput.addEventListener('input', function () {
+
        let valorInput = miInput.value.trim(); // Eliminar espacios al inicio y al final
        let longitudTexto = valorInput.length;
    
@@ -57,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
        let tieneEspacios = /\s/.test(valorInput);
    
        // Modificar clases según la longitud del texto y la validación de espacios
-       if (longitudTexto > 1 && !tieneEspacios) {
+       if (longitudTexto >= 1 && !tieneEspacios) {
            miInput.classList.remove('is-danger');
            miInput.classList.add('is-success');
    

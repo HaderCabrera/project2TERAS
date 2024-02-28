@@ -1,8 +1,4 @@
-//PARA LA CONSULTA
-let facturaCard = document.querySelector('.facturaCard')
-const habilitar = () => facturaCard.classList.remove('probando')
-const deshabilitar = () => facturaCard.classList.add('probando')
-document.querySelector('.prueba').addEventListener("click", deshabilitar)
+
 
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal

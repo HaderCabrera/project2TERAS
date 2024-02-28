@@ -14,7 +14,11 @@ let arregloAgua = [{"Metropolitana":{"link": "https://upload.wikimedia.org/wikip
 
 let arregloGas = [{"Terpel":{"link": "https://portalcolombia.terpel.com/static/images/terpel_logo_og.png" }}, {"Enel":{"link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/1024px-Enel_Group_logo.svg.png" }}]
 
-
+//PARA LA CONSULTA
+let facturaCard = document.querySelector('.facturaCard')
+const habilitar = () => facturaCard.classList.remove('probando')
+const deshabilitar = () => facturaCard.classList.add('probando')
+document.querySelector('.prueba').addEventListener("click", deshabilitar)
 
 let cod = ""
 let periodo =  ""
@@ -212,38 +216,43 @@ botonConsultar.addEventListener("click" , async (e) =>{
 
     if (doc.id == codigoFactura && datosFac["Empresa"] == proveedor) {
 
-        cod = doc.id
-        periodo = datosFac["mesFact"]
-        direccion = datosFac["direccion"]
-        logo = datosFac["mesFact"]
-        valor = datosFac["totalPago"]
+            cod = doc.id
+            periodo = datosFac["mesFact"]
+            direccion = datosFac["direccion"]
+            logo = datosFac["mesFact"]
+            valor = datosFac["totalPago"]
 
-        etiquetaImg = `
-        <figure class="image is-128x128">
-            <img class="logoEmpresa" src="${link}" alt="Logo de la empresa">
-        </figure>`
+            etiquetaImg = `
+            <figure class="image is-128x128">
+                <img class="logoEmpresa" src="${link}" alt="Logo de la empresa">
+            </figure>`
 
-        
+            
 
-        console.log("DATOS A FACTURA", cod , periodo , direccion , logo , valor);
-        console.log(datosFac);
-        console.log("Factura encontrada");
-
-       
-
-        contenedorCodigo.textContent = cod
-        contenedorPeriodo.textContent = periodo 
-        contenedorDirrec.textContent = direccion 
-        contenedorPagar.textContent = valor
-        contenedorLogo.innerHTML = etiquetaImg 
-
+            console.log("DATOS A FACTURA", cod , periodo , direccion , logo , valor);
+            console.log(datosFac);
+            console.log("Factura encontrada");
 
         
-        existe = true
 
-        }
+            contenedorCodigo.textContent = cod
+            contenedorPeriodo.textContent = periodo 
+            contenedorDirrec.textContent = direccion 
+            contenedorPagar.textContent = valor
+            contenedorLogo.innerHTML = etiquetaImg 
+
+
+            
+            existe = true
+            habilitar()
+        } 
 
     })
+
+
+    if (existe === false) {
+        deshabilitar()
+    }
 
     e.preventDefault()
 
@@ -325,3 +334,4 @@ botonPagar.addEventListener("click", async (e) => {
 
 
 }) 
+

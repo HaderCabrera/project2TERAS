@@ -133,7 +133,7 @@
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
-        <button class="button is-success modal-close ajustarUbicacion1" style="padding: 15px;" aria-label="close"></button>
+        <button class="button is-success modal-close ajustarUbicacion1" style="padding: 15px;" aria-label="close" id="cerrarConsulta"></button>
         <p class="title is-3">Consulta tu factura</p>
         <!---->
         <div class="field">
@@ -170,8 +170,8 @@
                 id="codigoFactura"
                 class="input is-success"
                 type="text"
-                placeholder="Text input"
-                value="ES1545236-9"
+                value="Ingrese codigo de la factura"
+                
             />
             <span class="icon is-small is-left">
                 <i class="fa fa-file" aria-hidden="true"></i>
@@ -256,7 +256,7 @@
         <div class="modal-background"></div>
         <div class="modal-content">
         <div class="box ">
-            <button class="button is-danger modal-close ajustarUbicacion2" style="padding: 15px;" aria-label="close"></button>
+            <button class="button is-danger modal-close ajustarUbicacion2" style="padding: 15px;" aria-label="close" id="cerrarDatosFactura"></button>
             <p class="title is-3">Datos de la factura</p>
             <hr>
             <div class="tile is-ancestor">
@@ -284,7 +284,7 @@
                     <article class="tile is-child box" id="logoEmpresa">
               
 
-                            <img class="logoEmpresa" src="" alt="Logo de la empresa">
+                            
 
                     </article>
                     </div>
@@ -300,8 +300,14 @@
                 </div>
                 <div class="tile is-parent">
                 <article class="tile is-child box">
-               
-                    <div id="direccionDomicilio"><strong>Direccion del domocilio</strong></div>
+
+                    <!-- Put any content you want -->
+                    <div>
+                        Direccion del domicilio: 
+                        <br>
+                        <span id="direccionDomicilio"></span>  
+                    </div>
+  
                 </article>
                 </div>
             </div>

@@ -38,7 +38,7 @@
                 <div class="media">
                 <div class="media-left">
                     <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img src="./img/logogas.png" alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div class="media-content">
@@ -46,7 +46,7 @@
                 </div>
                 </div>
                 <div class="content">
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <time datetime="2016-1-1">Alcanos-Promigas-Vanti</time>
                 </div>
             </div>
             </div>
@@ -64,7 +64,7 @@
                 <div class="media">
                 <div class="media-left">
                     <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img src="./img/logoagua.png" alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div class="media-content">
@@ -73,7 +73,7 @@
                 </div>
 
                 <div class="content">
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <time datetime="2016-1-1">Metropolitano-amb</time>
                 </div>
             </div>
             </div>
@@ -91,16 +91,16 @@
                 <div class="media">
                 <div class="media-left">
                     <figure class="image is-48x48">
-                    <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image"/>
+                    <img src="./img/logoluz.png" alt="Placeholder image"/>
                     </figure>
                 </div>
                 <div class="media-content">
-                    <p class="title is-4">Servicio de agua</p>
+                    <p class="title is-4">Servicio de luz</p>
                 </div>
                 </div>
 
                 <div class="content">
-                <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                <time datetime="2016-1-1">ESSA</time>
                 </div>
             </div>
             </div>
@@ -108,10 +108,12 @@
         </div>
     </div>
     </section>
+    <br>
+    <br>
     <!--BANER-->
-    <section class="section is-medium has-text-centered back">
-    <h1 class="title">Paga tus servicios en linea</h1>
-    <h2 class="subtitle">
+    <section class="section is-medium back" style="padding-right: 20%;">
+    <h1 class="title blanco">Paga tus servicios en linea</h1>
+    <h2 class="subtitle blanco">
         Con solo el numero de referencia de tu factura podras pagar con un click
         todas tus facturas.
     </h2>
@@ -119,7 +121,7 @@
         <span class="icon is-medium">
         <i class="fa fa-globe"></i>
         </span>
-        <span>CONSULTAR FACTURA</span>
+        <span>CONSULTAR</span>
     </button>
     </section>
 
@@ -130,6 +132,7 @@
     <div class="modal-background"></div>
     <div class="modal-content">
         <div class="box">
+        <button class="button is-success modal-close ajustarUbicacion1" style="padding: 15px;" aria-label="close"></button>
         <p class="title is-3">Consulta tu factura</p>
         <!---->
         <div class="field">
@@ -180,7 +183,6 @@
         <div class="field is-grouped">
             <div class="control">
             <button class="button js-modal-trigger is-success" data-target="modal-js-example2">Consultar</button>
-            <button class="button is-success modal-close" style="padding: 30px;" aria-label="close"></button>
             </div>
         </div>
         </div>
@@ -188,10 +190,11 @@
 
     </div>
     <!--MODAL2-->
-    <div id="modal-js-example2" class="modal">
+    <div id="modal-js-example2" style="display: none;" class="modal">
         <div class="modal-background"></div>
         <div class="modal-content">
         <div class="box ">
+            <button class="button is-danger modal-close ajustarUbicacion2" style="padding: 15px;" aria-label="close"></button>
             <p class="title is-3">Datos de la factura</p>
             <hr>
             <div class="tile is-ancestor">
@@ -200,11 +203,11 @@
                     <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
                         <!-- Put any content you want -->
-                        <div class="numeroFactura">Numero de la factura:</div>
+                        <div class="numeroFactura">Nùmero de la factura:</div>
                     </article>
                     <article class="tile is-child box">
                         <!-- Put any content you want -->
-                        <div id="periodoFacturado">Periodo facturado:</div>
+                        <div id="periodoFacturado">Mes facturado:</div>
                     </article>
                     </div>
                     <div class="tile is-parent">
@@ -231,7 +234,7 @@
             <section class="section intoo">
                 <div class="container ">
                     <button class="button is-danger">PAGAR</button>
-                    <button class="button is-danger modal-close" style="padding: 30px;" aria-label="close"></button>
+                    
                 </div>
             </section>
             </div>   

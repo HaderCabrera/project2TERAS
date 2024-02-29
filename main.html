@@ -207,9 +207,11 @@
                     <article class="tile is-child box">
                        
 
+
                         <div class="numeroFactura">
-                            <strong >Numero de la factura:</strong>
+                            <strong><i class="fa-solid fa-hashtag"></i>  Numero de la factura: </strong>
                             <br>
+
                             <span id="numeroFactura"></span>
                         </div>
 
@@ -217,9 +219,13 @@
                     <article class="tile is-child box">
                         
 
-                        <div> 
-                            <strong> Periodo facturado:</strong>
+
+                        <div> <strong> <i class="fa-solid fa-calendar-days"></i> Periodo facturado: </strong>
+
+                        
+                      
                             <br>
+
                             <span id="periodoFacturado"></span>
                         </div>
 
@@ -239,7 +245,8 @@
                 <div class="tile is-parent">
                     <article class="tile is-child box">
               
-                    <div class="totalPagar"><i class="fa fa-credit-card" aria-hidden="true"></i> <strong>Total a pagar: $</strong><span id="totalPagar"></span></div>
+
+                    <div class="totalPagar"><strong><i class="fa fa-credit-card" aria-hidden="true"></i>  Total a pagar: </strong> <span id="totalPagar"></span></div>
 
                     </article>
 
@@ -248,21 +255,11 @@
 
                 <div class="tile is-parent is-vertical">
                     <article class="tile is-child box">
-                        <div>
-                            <strong>Direccion del domicilio:</strong>
-                            <br>
-                            <span id="direccionDomicilio"></span>
-                        </div>
+
+                        <div id="divDireccionDomicilio"><strong><i class="fa-solid fa-location-dot"></i>  Direccion del domocilio: </strong><br> <span id="direccionDomicilio"></span></div>
                     </article>
                     <article class="tile is-child box">
-
-                        <div id="estado">
-                            <strong>Estado Factura:</strong>
-                            <br>
-                            <span id="estadoFactura">
-                                <p style="color: green;"></p>
-                            </span>
-                        </div>
+                        <div id="estado"> <strong> <i class="fa-solid fa-chart-simple"></i> Estado Factura: </strong> <span id="estadoFactura"></span></div>
                     </article>
 
                 </div>
@@ -298,5 +295,6 @@
     
     <script src="./hader.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <script src="https://kit.fontawesome.com/6e6e65d397.js" crossorigin="anonymous"></script>
 </body>
 </html>

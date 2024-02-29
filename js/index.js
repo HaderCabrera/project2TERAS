@@ -253,8 +253,10 @@ botonConsultar.addEventListener("click", async (e) => {
             direccion = datosFac["direccion"]
             logo = datosFac["mesFact"]
             valor = datosFac["totalPago"]
-            let estado = datosFac["Pagada"] ? "pagado" : "pendiente";
-            if (estado == "pendiente") {
+
+            let estado = datosFac["Pagada"] ? "Pagado" : "Pendiente";
+            if (estado == "Pendiente"){
+
                 botonPagar.removeAttribute('disabled')
                 etiquetaEstado = ` <p style="color: red;">${estado}</p>`
             } else {

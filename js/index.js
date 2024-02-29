@@ -279,7 +279,7 @@ botonConsultar.addEventListener("click", async (e) => {
             contenedorCodigo.textContent = cod
             contenedorPeriodo.textContent = periodo
             contenedorDirrec.textContent = direccion
-            contenedorPagar.textContent = valor
+            contenedorPagar.textContent = new Intl.NumberFormat('es-MX').format(valor)
             contenedorLogo.innerHTML = etiquetaImg
             contenedorEstado.innerHTML = etiquetaEstado
 

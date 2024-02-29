@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 function showCustomAlert() {
     document.getElementById('customAlert').style.display = 'flex';
 }
-  
+
 function hideCustomAlert() {
     document.getElementById('customAlert').style.display = 'none';
     location.reload()
@@ -21,11 +21,11 @@ function hideCustomAlert() {
 let arregloAgua = ["Metropolitana", "Codensa"]
 let arregloGas = ["Terpel", "Enel"] */
 
-let arregloLuz = [{"Codensa":{"link": "https://colombochilena.com/public/uploads/2015/12/logo-codensa.jpg" }} , {"Enel":{"link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/1024px-Enel_Group_logo.svg.png" }}]
+let arregloLuz = [{ "Codensa": { "link": "https://colombochilena.com/public/uploads/2015/12/logo-codensa.jpg" } }, { "Enel": { "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/1024px-Enel_Group_logo.svg.png" } }]
 
-let arregloAgua = [{"Metropolitana":{"link": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Logo_Metropolitane_Italia.svg" }}, {"Codensa":{"link": "https://colombochilena.com/public/uploads/2015/12/logo-codensa.jpg" }}]
+let arregloAgua = [{ "Metropolitana": { "link": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Logo_Metropolitane_Italia.svg" } }, { "Codensa": { "link": "https://colombochilena.com/public/uploads/2015/12/logo-codensa.jpg" } }]
 
-let arregloGas = [{"Terpel":{"link": "https://portalcolombia.terpel.com/static/images/terpel_logo_og.png" }}, {"Enel":{"link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/1024px-Enel_Group_logo.svg.png" }}]
+let arregloGas = [{ "Terpel": { "link": "https://portalcolombia.terpel.com/static/images/terpel_logo_og.png" } }, { "Enel": { "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Enel_Group_logo.svg/1024px-Enel_Group_logo.svg.png" } }]
 
 //PARA LA CONSULTA
 let facturaCard = document.querySelector('.facturaCard')
@@ -34,10 +34,10 @@ const deshabilitar = () => facturaCard.classList.add('probando')
 document.querySelector('.prueba').addEventListener("click", deshabilitar)
 
 let cod = ""
-let periodo =  ""
-let direccion =  ""
-let logo =  ""
-let valor =  ""
+let periodo = ""
+let direccion = ""
+let logo = ""
+let valor = ""
 
 
 //Variables globales 
@@ -45,7 +45,7 @@ let link = ""
 let etiquetaImg = ""
 
 
-const campoServicios = document.getElementById("tipoServicio") 
+const campoServicios = document.getElementById("tipoServicio")
 const botonPagar = document.getElementById("botonPagar")
 const botonConsultar = document.getElementById("botonConsultar")
 const cerrarConsulta = document.getElementById("cerrarConsulta")
@@ -53,13 +53,13 @@ const cerrarDatosFactura = document.getElementById("cerrarDatosFactura")
 const botonOk = document.getElementById("botonOk")
 
 
-botonOk.addEventListener("click" , async () => {
+botonOk.addEventListener("click", async () => {
     hideCustomAlert()
 })
 
 
 
-cerrarConsulta.addEventListener ("click" , async () => {
+cerrarConsulta.addEventListener("click", async () => {
 
     let contCodConsulta = document.getElementById("codigoFactura")
     contCodConsulta.value = ""
@@ -67,7 +67,7 @@ cerrarConsulta.addEventListener ("click" , async () => {
 
 })
 
-cerrarDatosFactura.addEventListener("click" , async () => {
+cerrarDatosFactura.addEventListener("click", async () => {
 
 
     let contenedorCodigo = document.getElementById("numeroFactura")
@@ -77,8 +77,8 @@ cerrarDatosFactura.addEventListener("click" , async () => {
     let contenedorPagar = document.getElementById("totalPagar")
 
 
-    contenedorCodigo.textContent = ""   
-    contenedorPeriodo.textContent = "" 
+    contenedorCodigo.textContent = ""
+    contenedorPeriodo.textContent = ""
     contenedorDirrec.textContent = ""
     contenedorPagar.textContent = ""
     contenedorLogo.innerHTML = ""
@@ -86,19 +86,19 @@ cerrarDatosFactura.addEventListener("click" , async () => {
 
     deshabilitar()
 
-    
-
-    
 
 
 
-    
+
+
+
+
 })
 
 
 
 
-campoServicios.addEventListener("click" , async () => {
+campoServicios.addEventListener("click", async () => {
 
     let tipoServicio = document.getElementById("tipoServicio").value
 
@@ -111,12 +111,12 @@ campoServicios.addEventListener("click" , async () => {
         for (const dato of arregloAgua) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-              console.log("Llave:", llave);
-              console.log("Valor:", valor.link);
-              opciones += ` <option>${llave}</option> `
-              
+                console.log("Llave:", llave);
+                console.log("Valor:", valor.link);
+                opciones += ` <option>${llave}</option> `
+
             }
-          }
+        }
 
 
         /* arregloAgua.forEach(empresa => {
@@ -132,12 +132,12 @@ campoServicios.addEventListener("click" , async () => {
         for (const dato of arregloLuz) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-              console.log("Llave:", llave);
-              console.log("Valor:", valor.link);
-              opciones += ` <option>${llave}</option> `
-              
+                console.log("Llave:", llave);
+                console.log("Valor:", valor.link);
+                opciones += ` <option>${llave}</option> `
+
             }
-          }
+        }
 
         /* arregloLuz.forEach(empresa => {
 
@@ -152,12 +152,12 @@ campoServicios.addEventListener("click" , async () => {
         for (const dato of arregloGas) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-              console.log("Llave:", llave);
-              console.log("Valor:", valor.link);
-              opciones += ` <option>${llave}</option> `
-              
+                console.log("Llave:", llave);
+                console.log("Valor:", valor.link);
+                opciones += ` <option>${llave}</option> `
+
             }
-          }
+        }
 
         /* arregloGas.forEach(empresa => {
 
@@ -171,65 +171,65 @@ campoServicios.addEventListener("click" , async () => {
 })
 
 
-botonConsultar.addEventListener("click" , async (e) =>{
+botonConsultar.addEventListener("click", async (e) => {
 
 
-    
+
 
     let tipoServicio = document.getElementById("tipoServicio").value
     let proveedor = document.getElementById("seccionProveedores").value
-    let codigoFactura = document.getElementById("codigoFactura").value 
+    let codigoFactura = document.getElementById("codigoFactura").value
 
 
 
     let existe = false
 
-    console.log(tipoServicio , proveedor , codigoFactura)
+    console.log(tipoServicio, proveedor, codigoFactura)
 
 
-    if (tipoServicio == "Agua"){
+    if (tipoServicio == "Agua") {
 
         for (const dato of arregloAgua) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-              if (llave == proveedor){
-                 link = valor.link
-                 console.log("Llave:", llave);
-                 console.log("Valor:", valor.link);
-              }
-              
-              
+                if (llave == proveedor) {
+                    link = valor.link
+                    console.log("Llave:", llave);
+                    console.log("Valor:", valor.link);
+                }
+
+
             }
-          }
-    
-      }else if (tipoServicio == "Luz"){
-    
+        }
+
+    } else if (tipoServicio == "Luz") {
+
         for (const dato of arregloLuz) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-                if (llave == proveedor){
+                if (llave == proveedor) {
                     link = valor.link
                     console.log("Llave:", llave);
                     console.log("Valor:", valor.link);
-                 }
-              
+                }
+
             }
-          }
-    
-      } else if (tipoServicio == "Gas"){
-    
+        }
+
+    } else if (tipoServicio == "Gas") {
+
         for (const dato of arregloGas) {
             // Obtener las llaves y valores de cada objeto
             for (const [llave, valor] of Object.entries(dato)) {
-                if (llave == proveedor){
+                if (llave == proveedor) {
                     link = valor.link
                     console.log("Llave:", llave);
                     console.log("Valor:", valor.link);
-                 }
+                }
             }
-          }
-    
-      }
+        }
+
+    }
 
     const datosObtenidos = await obtenerDatos(tipoServicio);
 
@@ -244,7 +244,9 @@ botonConsultar.addEventListener("click" , async (e) =>{
         let contenedorPagar = document.getElementById("totalPagar")
         let contenedorEstado = document.getElementById("estadoFactura")
         let botonPagar = document.getElementById("botonPagar")
-    if (doc.id == codigoFactura && datosFac["Empresa"] == proveedor) {
+        let etiquetaEstado = ""
+
+        if (doc.id == codigoFactura && datosFac["Empresa"] == proveedor) {
 
             cod = doc.id
             periodo = datosFac["mesFact"]
@@ -252,35 +254,37 @@ botonConsultar.addEventListener("click" , async (e) =>{
             logo = datosFac["mesFact"]
             valor = datosFac["totalPago"]
             let estado = datosFac["Pagada"] ? "pagado" : "pendiente";
-            if (estado == "pendiente"){
+            if (estado == "pendiente") {
                 botonPagar.removeAttribute('disabled')
-            }else{
-                botonPagar.setAttribute('disabled',"true")
+                etiquetaEstado = ` <p style="color: red;">${estado}</p>`
+            } else {
+                botonPagar.setAttribute('disabled', "true")
+                etiquetaEstado = ` <p style="color: green;">${estado}</p>`
             }
             etiquetaImg = `
             <figure class="image is-128x128">
                 <img class="logoEmpresa" src="${link}" alt="Logo de la empresa">
             </figure>`
 
-            
 
-            console.log("DATOS A FACTURA", cod , periodo , direccion , logo , valor);
+
+            console.log("DATOS A FACTURA", cod, periodo, direccion, logo, valor);
             console.log(datosFac);
             console.log("Factura encontrada");
 
-        
+
 
             contenedorCodigo.textContent = cod
-            contenedorPeriodo.textContent = periodo 
-            contenedorDirrec.textContent = direccion 
+            contenedorPeriodo.textContent = periodo
+            contenedorDirrec.textContent = direccion
             contenedorPagar.textContent = valor
-            contenedorLogo.innerHTML = etiquetaImg 
-            contenedorEstado.textContent = estado
+            contenedorLogo.innerHTML = etiquetaImg
+            contenedorEstado.innerHTML = etiquetaEstado
 
-            
+
             existe = true
             habilitar()
-        } 
+        }
 
     })
 
@@ -298,11 +302,11 @@ botonPagar.addEventListener("click", async (e) => {
 
     let tipoServicio = document.getElementById("tipoServicio").value
     let proveedor = document.getElementById("seccionProveedores").value
-    let codigoFactura = document.getElementById("codigoFactura").value 
+    let codigoFactura = document.getElementById("codigoFactura").value
 
     let existe = false
 
-    
+
     e.preventDefault()
 
 
@@ -310,7 +314,7 @@ botonPagar.addEventListener("click", async (e) => {
         alert("Datos invalidos")
         return
 
-    }else{
+    } else {
 
         const datosObtenidos = await obtenerDatos(tipoServicio);
 
@@ -331,11 +335,11 @@ botonPagar.addEventListener("click", async (e) => {
                             Pagada: true,
                         }, tipoServicio);
                         showCustomAlert()
-                        
+
                         console.log("Factura pagada");
-                        
-                        
-                        
+
+
+
 
                     } catch (error) {
                         console.error("Error al actualizar la factura:", error);
@@ -354,7 +358,7 @@ botonPagar.addEventListener("click", async (e) => {
     }
 
 
-    
+
 
 
 
@@ -373,5 +377,5 @@ botonPagar.addEventListener("click", async (e) => {
 
 
 
-}) 
+})
 

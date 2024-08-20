@@ -3,7 +3,7 @@
 
 ## Pagina web desplegada 🚀
 _Visita la pagina web_
-* [Web JOVIMOTOS](https://hadercabrera.github.io/project2TERAS/)
+* [Web 2TERAS](https://hadercabrera.github.io/project2TERAS/)
 
 ## Construido con 🛠️
 
